@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"); /* import font */
+
+:root {
+  --white: #f9f9f9;
+  --black: #36383f;
+  --gray: #85888c;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #1a2b5f;
+  line-height: 1.4;
+  font-size: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.primary-color {
+  color: #ffc87a;
+}
+
+.text-color {
+  color: #1a2b5f;
+}
+
+.d-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* kích thước file pdf: 1440px, kích thước container: 1170 */
+
+.wrapper {
+  max-width: 1440px;
+  /* tuỳ theo file pdf kích thước bao nhiêu */
+  margin: 0 auto;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1210px; /* 1170 + 40 px */
+  padding-left: 2rem; /* 20px */
+  padding-right: 2rem; /* 20px */
+}
+
+.header {
+  padding-top: 2.5rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  height: 125px;
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1a2b5f;
+}
+
+.logo-text {
+  color: #ffc87a;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item {
+  position: relative;
+  margin-left: 5rem;
+}
+
+.menu-item:last-child {
+  margin-left: 7rem;
+}
+
+.menu-link {
+  font-size: 1.6rem;
+  color: #1a2b5f;
+  transition: color 0.25s linear, border 0.25s linear;
+}
+
+.menu-login {
+  display: inline-block;
+  padding: 1.5rem 2.5rem;
+  border: 1px solid;
+  border-radius: 2.5rem;
+}
+
+.menu-link:hover {
+  color: #ffc87a;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 3.5rem;
+  background-color: #ffc87a;
+  padding: 1em 0;
+  border-radius: 8px;
+}
+
+.menu-item:hover .dropdown {
+  display: block;
+}
+
+.dropdown li + li {
+  margin-top: 10px;
+}
+
+.dropdown li {
+  padding: 0.5em 1em;
+  width: 8em;
+  text-align: center;
+}
+
+.dropdown li:hover {
+  background-color: #4c9e9e;
+}
+
+.menu-item:hover .dropdown {
+  display: block;
+}
+
+.dropdown li a {
+  color: #1a2b5f;
+}
+
+.hamburger-icon {
+  display: none;
+}
+
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.active {
+  color: #ffc87a;
+}
+
+@media screen and (max-width: 992px) {
+  .header-inner {
+    display: unset;
+  }
+
+  .header-menu {
+    width: 100%;
+    position: absolute;
+    background: #ffc87a;
+    margin-top: 1.2rem;
+  }
+
+  .menu-link {
+    color: white;
+  }
+
+  .active {
+    color: #1a2b5f;
+    font-weight: bold;
+  }
+
+  .menu-list {
+    display: none;
+  }
+
+  .hamburger-icon {
+    width: 40px;
+    height: 40px;
+    padding-top: 1rem;
+    display: block;
+    float: right;
+  }
+
+  .menu-list.responsive {
+    display: block;
+  }
+
+  ul#headerTopNav {
+    padding-top: 20px;
+  }
+
+  .menu-item {
+    margin-left: 2rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .menu-item:last-child {
+    margin-left: 2rem;
+  }
+
+  .menu-login {
+    display: inline-block;
+    padding: unset;
+    border: none;
+    border-radius: 2.5rem;
+  }
+
+  .dropdown {
+    top: 0;
+    left: 100px;
+  }
+}
+
+#category {
+  padding-top: 3.5rem;
+  padding-bottom: 8.5rem;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.category-item {
+  width: calc(25% - 22.5px);
+  padding: 2.5rem;
+  border-radius: 25px;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  /* overflow: hidden; */
+}
+
+.category-image {
+  border-radius: inherit;
+  object-fit: cover;
+  width: 100%;
+  height: 230px;
+  margin-bottom: 3.5rem;
+  transition: transform 0.9s ease;
+}
+
+.category-name,
+.category-detail {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category-name {
+  margin-bottom: 27px;
+  font-size: 2rem;
+}
+
+.category-detail {
+  font-size: 1.4rem;
+  color: #c6cad7;
+  margin-top: auto;
+}
+
+.category-item:nth-child(1) {
+  box-shadow: 0 30px 35px -5px rgba(255, 243, 247);
+}
+
+.category-item:nth-child(2) {
+  box-shadow: 0 30px 35px -5px rgba(255, 237, 235);
+}
+
+.category-item:nth-child(3) {
+  box-shadow: 0 30px 35px -5px rgba(239, 241, 254);
+}
+
+.category-item:nth-child(4) {
+  box-shadow: 0 30px 35px -5px rgba(255, 249, 237);
+}
+
+.category-image:hover {
+  transform: scale(1.1);
+}
